@@ -1,6 +1,8 @@
 import { FC, useState } from 'react';
 import { TextField } from '../../components';
 import { Button } from '../../components';
+import { WidgetLayout } from '../../components/layouts';
+import './loginPageStyles.scss';
 
 export const LoginPage: FC = () => {
     const [login, setLogin] = useState<string>('');
@@ -19,11 +21,23 @@ export const LoginPage: FC = () => {
         });
     }
 
+    const toRegistrationHandler = () => {
+
+    };
+
     return (
-        <>
-            <TextField labelText = "Логин" value = {login} type = "text" onChange = {loginChangedHandler} />
-            <TextField labelText = "Пароль" value = {password} type = "password" onChange={passwordChangedHandler}/>
-            <Button text="Войти" onClick={loginHandler} />
-        </>
+        <WidgetLayout>
+            <div className="login-page__form">
+                <h3 className="login-page__title">Вход</h3>
+                <div className="login-page__fields">
+                    <TextField labelText = "Логин" value = {login} type = "text" onChange = {loginChangedHandler} />
+                    <TextField labelText = "Пароль" value = {password} type = "password" onChange={passwordChangedHandler}/>
+                </div>
+                <div className="login-page__actions">
+                    <Button text="Войти" onClick={loginHandler} type = "primary" />
+                    <Button text="Зарегистрироваться" onClick={toRegistrationHandler} type = "secondary" />
+                </div>
+            </div>
+        </WidgetLayout>
     );
 };
