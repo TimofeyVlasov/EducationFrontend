@@ -1,12 +1,16 @@
 import { FC, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { TextField } from '../../components';
 import { Button } from '../../components';
 import { WidgetLayout } from '../../components/layouts';
+import { RoutesPaths } from '../../constants/commonConstants';
 import './loginPageStyles.scss';
 
 export const LoginPage: FC = () => {
     const [login, setLogin] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+
+    const navigate = useNavigate();
 
     const loginChangedHandler = (value: string) => {
         setLogin(value);
@@ -19,10 +23,11 @@ export const LoginPage: FC = () => {
             login,
             password
         });
+        navigate(RoutesPaths.Courses);
     }
 
     const toRegistrationHandler = () => {
-
+        navigate(RoutesPaths.Registration);
     };
 
     return (
