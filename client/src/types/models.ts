@@ -12,6 +12,19 @@ export interface StudentProgress {
     description?: string;
 }
 
+export interface UserFile {
+    id: number;
+    systemName: string;
+    displayName: string;
+}
+
+export interface User {
+    id: number;
+    login: string;
+    password: string;
+    role: 'admin' | 'manager' | 'user';
+}
+
 export interface Student {
     id: number;
     firstName: string;
@@ -20,8 +33,9 @@ export interface Student {
     email: string;
     phoneNumber: string;
     birthDate: string;
-    enrollments: Array<Enrollment>;
-    progress: Array<StudentProgress>;
+    enrollment: Array<Enrollment>;
+    studentProgress: Array<StudentProgress>;
+    userFiles: Array<UserFile>;
 }
 
 export interface Course {

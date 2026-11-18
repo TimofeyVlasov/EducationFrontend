@@ -1,6 +1,10 @@
 export { Button } from './button';
 export { Dialog } from './dialog';
 export { DropDown } from './dropDown';
+export { EnrollmentsList } from './enrollmentsList';
+export { FilesList } from './filesList';
+export { ProgressList } from './progressList';
 export { StudentsList } from './studentsList';
 export { TextField } from './textField';
 export { UserMenu } from './userMenu';
+export { UsersList } from './usersList';
